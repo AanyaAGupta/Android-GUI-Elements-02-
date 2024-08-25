@@ -11,12 +11,13 @@
         android:id="@+id/greeting_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <Button
         android:id="@+id/increment_button"
@@ -57,5 +58,40 @@
             android:layout_height="wrap_content"/>
 
     </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_input"
+        app:layout_constraintBottom_toTopOf="@id/greeting_textview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="horizontal"
+        android:inputType="text"
+        android:hint="@string/enter_name"
+        />
+
+    <TextView
+        android:id="@+id/greeting_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="#FFA500"
+        app:layout_constraintBottom_toTopOf="@id/greeting_textview"
+        app:layout_constraintTop_toTopOf="@id/name_input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        app:layout_constraintTop_toBottomOf="@id/name_input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
     
 </androidx.constraintlayout.widget.ConstraintLayout>

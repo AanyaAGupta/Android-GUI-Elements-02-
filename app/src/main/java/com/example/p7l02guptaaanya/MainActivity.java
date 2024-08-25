@@ -1,9 +1,12 @@
 package com.example.p7l02guptaaanya;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -16,9 +19,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     Button incrementButton;
-    TextView greetingDisplay;
+    TextView greetingDisplay, greetingStart;
     String[] planets;
     RadioButton leftRadBut, rightRadBut;
+    EditText name;
     int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,38 @@ public class MainActivity extends AppCompatActivity {
         planets = getResources().getStringArray(R.array.planets_array);
         leftRadBut = findViewById(R.id.radio_left);
         rightRadBut = findViewById(R.id.radio_right);
+        name = findViewById(R.id.name_input);
+        greetingStart = findViewById(R.id.greeting_name);
+        Button submitButton = findViewById(R.id.submit_button);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nameT = name.getText().toString();
+                if (!nameT.isEmpty()) {
+                    greetingStart.setText(getString(R.string.greeting, nameT));
+                    name.setVisibility(View.GONE);
+                    submitButton.setVisibility(View.GONE);
+                }
+            }
+        });
+
+//        name.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int st, int c, int a) {
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int st, int b, int c) {
+//                //name.setHint("Welcome " + s.toString());
+//                greetingStart.setText(getString(R.string.greeting, s.toString()));
+//                name.setVisibility(View.GONE);
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//            }
+//        });
         incrementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
