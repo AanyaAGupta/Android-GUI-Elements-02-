@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Really Fun Lab02</string>
+    <string name="increment">Increment</string>
+    <string name="greet_dad">Hello Dad</string>
+    <string name="decrement">decrement</string>
+    <string name="greeting">Hello World!</string>
+    <string name="likes_count">You have %1$d likes</string>
+    <string name="radio_label_down">Down</string>
+    <string name="radio_label_up">Up</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
+</resources>
